@@ -177,7 +177,8 @@ line-height: 1.5;
     margin-top: 70px;
 }
 .form-container{
-    width:100vw;
+    width:600px;
+    border: 2px solid white;
     padding: 0 5%;
     /* height: 40vw; */
     /* background-color: red; */
