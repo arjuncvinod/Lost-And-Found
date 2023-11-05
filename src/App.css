@@ -18,10 +18,12 @@ nav{
     align-items: center;
     justify-content: space-between;
     padding: 5px 2%;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.7);
     width: 100vw;
     top: 0;
     left: 0;
+    z-index: 1000;
+    backdrop-filter:blur(30px);
 }
 nav img{
     width: 60px;
@@ -47,6 +49,7 @@ nav ul li a{
 .hero h1{
     color: var(--yellow);
     font-size: 5rem;
+    text-align: center;
 }
 .hero button{
     padding: 10px 30px;
