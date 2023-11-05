@@ -178,6 +178,8 @@ line-height: 1.5;
     width: 100vw;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .form-container{
     width:600px;
