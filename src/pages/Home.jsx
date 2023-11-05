@@ -5,9 +5,9 @@ function Home(){
         <Navbar />
         <div className="hero">
             <h1>Lost and Found</h1>
-            <button>Find item</button>
+            <a href="/find"><button>Find item</button></a>
         </div>
     </main>
     )
 } 
-export default Home;
+export default Home; 

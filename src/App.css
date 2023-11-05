@@ -11,7 +11,7 @@
 body{
     background-color: black;
 }
-
+/* --------------------------------------------------Nav Bar ------------------------------------ */
 nav{
     position: fixed;
     display: flex;
@@ -20,6 +20,8 @@ nav{
     padding: 5px 2%;
     background-color: black;
     width: 100vw;
+    top: 0;
+    left: 0;
 }
 nav img{
     width: 60px;
@@ -34,7 +36,7 @@ nav ul li a{
     font-size: 17px;
     color: var(--yellow);
 }
-
+/* -----------------------------------------------home page ------------------------------------------ */
 .hero{
     display: flex;
     flex-direction: column;
@@ -75,4 +77,93 @@ nav ul li a{
     color: black;
     z-index: 2;
 
+}
+
+/* -----------------------------------------------find page ------------------------------------------- */
+#findpage section{
+    margin-top: 70px;
+    padding: 0 5%;
+    /* width: 100vw; */
+}
+.lfh1{
+    margin-bottom: 50px;
+    text-align: center;
+   color: white;
+   font-size: 2.2rem;
+   position: relative;
+   display: block
+}
+.lfh1::after{
+    content: '';
+    width: 100px;
+    background-color:var(--yellow);
+    height: 2px;
+    position: absolute;
+    top: 47px;
+    left: 50%;
+    transform: translatex(-50%);
+    /* right: 50%; */
+    /* transform: translateY(-50%); */
+    border-radius: 6px;
+}
+.item-container{
+    display: flex;
+    justify-content:center;
+    flex-wrap: wrap;
+    gap: 30px;
+    flex-grow: 1;
+    
+}
+.item-container:last-child{
+    margin-right: auto;
+}
+.card{
+    width: 300px;
+    /* height: 400px; */
+    border: 2px solid whitesmoke;
+    /* margin: 50px; */
+    /* background-color: white; */
+    border-radius: 10px;
+    padding: 20px;
+}
+.card-img{
+    width: 260px;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.card-img img{
+    width: 260px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: .5s;
+}
+.card-img img:hover{
+    scale: 1.1;
+}
+.card-desc{
+    margin: 20px 0;
+}
+.card-desc h2{
+color: white;
+margin-bottom: 20px;
+font-size: 20px;
+}
+.card-desc p{
+color:gray;
+overflow: hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 3;
+-webkit-box-orient: vertical;
+line-height: 1.5;
+
+}
+.extraItem{
+    min-width:300px;
+    height: 0;
 }
