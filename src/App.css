@@ -183,6 +183,7 @@ line-height: 1.5;
 }
 .form-container{
     width:600px;
+    padding: 20px;
     border: 2px solid white;
     padding: 0 5%;
     /* height: 40vw; */
