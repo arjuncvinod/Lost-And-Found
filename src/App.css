@@ -170,3 +170,17 @@ line-height: 1.5;
     min-width:300px;
     height: 0;
 }
+
+/* -----------------------------------Post item page ----------------------------- */
+
+#postItem section{
+    margin-top: 70px;
+}
+.form-container{
+    width:100vw;
+    padding: 0 5%;
+    /* height: 40vw; */
+    background-color: red;
+    display: flex;
+    justify-content: center;
+}

@@ -1,14 +1,14 @@
 import Navbar from "../components/Navbar"
-import Form from "../components/Form"
+// import Form from "../components/Form"
 
 export default function Post(){
     return (
-      <main>
+      <main id="postItem">
         <Navbar />
-        <section id="postItem">
-        <h1>Post Found Item</h1>
+        <section >
+        <h1 className="lfh1">Post Found Item</h1>
         <div className="form-container">
-          <h1>Please fill all the required fields</h1>
+          <h2>Please fill all the required fields</h2>
           <form action="">
             <label htmlFor="">Name </label> <input type="text" />
             <label htmlFor="">Email </label> <input type="email" />
