@@ -183,9 +183,8 @@ line-height: 1.5;
 }
 .form-container{
     width:600px;
-    padding: 20px;
     border: 2px solid white;
-    padding: 0 5%;
+    padding: 20px;
     /* height: 40vw; */
     /* background-color: red; */
     color: white;
@@ -193,18 +192,114 @@ line-height: 1.5;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    border-radius: 16px;
 }
 .form-container h2{
     text-align: start;
     width: 500px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: gray;
 }
 form{
     width: 500px;
     display: flex;
     flex-direction: column;
 }
-
+.input-container{
+position: relative;
+width: 500px;
+}
 form input{
     margin-bottom: 20px;
+    height: 40px;
+    border-radius: 8px;
+    border: 2px solid gray;
+    outline: none;
+    width: 500px;
+    background-color: black;
+    color: white;
+    padding: 0 10px;
+    transition: .15s;
+}
+form textarea{
+    height: 60px;
+    width: 500px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 2px solid gray;
+    outline: none;
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+}
+form label{
+    position: absolute;
+    color:gray;
+    top: -10px;
+    left: 15px;
+    background-color: black;
+    padding: 0 4px;
+}
+form input[type=submit]{
+    background-color: var(--yellow);
+    font-size: 1rem;
+    font-weight: 600;
+    border: var(--yellow);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: black;
+    cursor: pointer;
+}
+form input[type=file]{
+    height: 40px;
+    padding: 8px;
+
+}
+form input:focus, form textarea:focus{
+    border: 2px solid var(--yellow);
+}
+.input-container label:hover{
+    color: var(--yellow);
+}
+form input[type="submit"]:hover{
+    background-color: #e4d913;
+}
+@media only screen and (max-width: 750px) {
+    .lfh1{
+        margin-bottom: 25px;
+    }
+    form{
+        width: 100vw;
+    }
+  .form-container{
+    align-items: center;
+    width:100vw;
+    padding: 0;
+    border: none;
+  }
+  .form-container h2{
+    width: 90vw;
+    font-size: 1rem;
+  }
+  .input-container{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+  }
+  form input{
+    width: 90vw;
+    height: 50px;
+  }
+  form label{
+    left: 30px;
+  }
+  form textarea{
+    width: 90vw;
+    height: 100px;
+  }
+  form input[type=file]{
+    width: 90vw;
+  }
 }
