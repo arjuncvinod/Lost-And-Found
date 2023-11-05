@@ -175,6 +175,9 @@ line-height: 1.5;
 
 #postItem section{
     margin-top: 70px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
 }
 .form-container{
     width:600px;
