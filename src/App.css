@@ -180,7 +180,8 @@ line-height: 1.5;
     width:100vw;
     padding: 0 5%;
     /* height: 40vw; */
-    background-color: red;
+    /* background-color: red; */
+    color: white;
     display: flex;
     justify-content: center;
     flex-direction: column;
