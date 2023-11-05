@@ -183,4 +183,10 @@ line-height: 1.5;
     background-color: red;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+form{
+    width: 500px;
+    
 }
