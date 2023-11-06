@@ -275,7 +275,7 @@ width: 500px;
     .lfh1{
         margin-bottom: 25px;
     }
-    form{
+    .form{
         width: 100vw;
     }
   .form-container{
@@ -293,18 +293,18 @@ width: 500px;
     display: flex;
     justify-content: center;
   }
-  form input{
+  .form input{
     width: 90vw;
     height: 50px;
   }
-  form label{
+  .form label{
     left: 30px;
   }
-  form textarea{
+  .form textarea{
     width: 90vw;
     height: 100px;
   }
-  form input[type=file]{
+  .form input[type=file]{
     width: 90vw;
   }
 }
