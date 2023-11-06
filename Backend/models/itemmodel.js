@@ -11,7 +11,7 @@ const itemSchema = mongoose.Schema(
       required: true,
     },
    phoneno: {
-      type: Number,
+      type: String,
       required: true,
     },
     title:{
