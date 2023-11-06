@@ -1,7 +1,41 @@
+import { useState } from "react";
 import Navbar from "../components/Navbar";
-// import Form from "../components/Form"
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useSnackbar } from "notistack";
+import { api } from "../config";
 
 export default function Post() {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [title, setTitle] = useState("");
+  const [desc, setDesc] = useState("");
+  const [image, setImage] = useState("");
+  const navigate = useNavigate();
+  const { enqueueSnackbar } = useSnackbar();
+
+  function handleSubmit(){
+  const data={
+    name:name,
+    phoneno:phone,
+    email:email,
+    title:title,
+    description:desc,
+    image:image
+  }
+   axios
+     .post(`${api}/item`, data)
+     .then(() => {
+       enqueueSnackbar("Item Posted Successfully", { variant: "success" });
+       navigate("/find");
+     })
+     .catch((err) => {
+       console.log(err);
+       enqueueSnackbar("Error", { variant: "error" });
+     });
+  }
+
   return (
     <main id="postItem">
       <Navbar />
@@ -9,29 +43,52 @@ export default function Post() {
         <h1 className="lfh1">Post Found Item</h1>
         <div className="form-container">
           <h2>Please fill all the required fields</h2>
-          <form action="">
+          <div className="form">
             <div className="input-container">
-              <label htmlFor="">Name </label> <input type="text" />
+              <label htmlFor="">Name </label>{" "}
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
             </div>
             <div className="input-container">
-              <label htmlFor="">Email </label> <input type="email" />
+              <label htmlFor="">Email </label>{" "}
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </div>
             <div className="input-container">
-              <label htmlFor="">Phone </label> <input type="tel" />
+              <label htmlFor="">Phone </label>{" "}
+              <input
+                type="tel"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+              />
             </div>
             <div className="input-container">
-              <label htmlFor="">Title </label> <input type="Text" />
+              <label htmlFor="">Title </label>{" "}
+              <input
+                type="Text"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+              />
             </div>
             <div className="input-container">
-              <label htmlFor="">Description </label> <textarea></textarea>
+              <label htmlFor="">Description </label>{" "}
+              <textarea onChange={(e) => setDesc(e.target.value)} value={desc}>
+                {desc}
+              </textarea>
             </div>
             <div className="input-container">
-              <input type="file" />
+              <input type="file" onChange={(e)=>setImage(e.target.value)} />
             </div>
             <div className="input-container">
-              <input type="submit" value="submit" />
+              <button className="submitbtn" onClick={handleSubmit}>Post</button>
             </div>
-          </form>
+          </div>
         </div>
       </section>
     </main>
