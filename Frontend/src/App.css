@@ -207,7 +207,7 @@ a{
     margin-bottom: 20px;
     color: gray;
 }
-form{
+.form{
     width: 500px;
     display: flex;
     flex-direction: column;
@@ -216,7 +216,7 @@ form{
 position: relative;
 width: 500px;
 }
-form input{
+.form input, .submitbtn{
     margin-bottom: 20px;
     height: 40px;
     border-radius: 8px;
@@ -228,7 +228,7 @@ form input{
     padding: 0 10px;
     transition: .15s;
 }
-form textarea{
+.form textarea{
     height: 60px;
     width: 500px;
     border-radius: 8px;
@@ -239,7 +239,7 @@ form textarea{
     color: white;
     padding: 5px 10px;
 }
-form label{
+.form label{
     position: absolute;
     color:gray;
     top: -10px;
@@ -247,7 +247,7 @@ form label{
     background-color: black;
     padding: 0 4px;
 }
-form input[type=submit]{
+.submitbtn{
     background-color: var(--yellow);
     font-size: 1rem;
     font-weight: 600;
@@ -257,18 +257,18 @@ form input[type=submit]{
     color: black;
     cursor: pointer;
 }
-form input[type=file]{
+.form input[type=file]{
     height: 40px;
     padding: 8px;
 
 }
-form input:focus, form textarea:focus{
+.form input:focus, .form textarea:focus{
     border: 2px solid var(--yellow);
 }
 .input-container label:hover{
     color: var(--yellow);
 }
-form input[type="submit"]:hover{
+.submitbtn:hover{
     background-color: #e4d913;
 }
 @media only screen and (max-width: 750px) {
