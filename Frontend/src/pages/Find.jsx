@@ -24,7 +24,7 @@ function Find() {
             return (
               <Itemcard
                 key={index}
-                id={findItem.id}
+                id={findItem._id}
                 title={findItem.title}
                 description={findItem.description}
     

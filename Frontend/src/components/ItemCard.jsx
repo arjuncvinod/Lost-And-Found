@@ -1,5 +1,6 @@
 export default function Itemcard(props) {
   return (
+    <a href={"/"+props.id}>
     <div className="card">
       <div className="card-img">
         <img
@@ -14,5 +15,6 @@ export default function Itemcard(props) {
         </p>
       </div>
     </div>
+    </a>
   );
 }
