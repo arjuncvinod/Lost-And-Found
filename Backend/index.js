@@ -8,6 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+// --------------------------get ---------------------------
 
 app.get("/item", async (req, res) => {
   try {
@@ -20,6 +21,8 @@ app.get("/item", async (req, res) => {
     res.status(500).send({ message: error.message });
   }
 });
+
+// ---------------------------------------post----------------------------------
 
 app.post("/item", async (req, res) => {
   try {
@@ -46,6 +49,34 @@ app.post("/item", async (req, res) => {
   } catch (error) {
     console.log(error);
     res.status(500).send("error");
+  }
+});
+
+// -------------------------------------get id--------------------------------
+
+app.get("/item/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    const item = await Item.findById(id);
+    return res.status(200).json(item);
+  } catch (error) {
+    res.status(500).send({ message: error.message });
+  }
+});
+
+// --------------------------delete -------------------------
+
+app.delete("/item/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    const result = await Item.findByIdAndDelete(id);
+    if (!result) {
+      return res.status(404).send({ message: "Item not found" });
+    }
+    return res.status(200).send({ message: "Item deleted" });
+  } catch (error) {
+    console.log(error.message);
+    return res.status(500).send({ message: error.message });
   }
 });
 
