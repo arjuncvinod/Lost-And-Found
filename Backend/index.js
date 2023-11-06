@@ -21,7 +21,33 @@ app.get("/item", async (req, res) => {
   }
 });
 
+app.post("/item", async (req, res) => {
+  try {
+    if (
+      !req.body.name ||
+      !req.body.email ||
+      !req.body.phoneno ||
+      !req.body.title ||
+      !req.body.description
+    ) {
+      return res.status(400).send({ message: "all fields sent" });
+    }
+    const newItem = {
+      name: req.body.name,
+      email: req.body.email,
+      phoneno: req.body.phoneno,
+      title: req.body.title,
+      description: req.body.description,
+      image: req.body.image,
+    };
 
+    const item = await Item.create(newItem);
+    return res.status(200).send(item);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("error");
+  }
+});
 
 app.listen(PORT, () => {
   console.log(`server started at port ${PORT}`);
