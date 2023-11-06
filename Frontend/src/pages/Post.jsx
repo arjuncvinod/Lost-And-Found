@@ -29,7 +29,7 @@ export default function Post() {
               <input type="file" />
             </div>
             <div className="input-container">
-              <input type="submit" />
+              <input type="submit" value="submit" />
             </div>
           </form>
         </div>
