@@ -20,7 +20,7 @@ function Find() {
       <section>
         <h1 className="lfh1">Lost and Found Items</h1>
         <div className="item-container">
-          {item.map((findItem, index) => {
+          {item.reverse().map((findItem, index) => {
             return (
               <Itemcard
                 key={index}
