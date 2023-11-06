@@ -1,4 +1,4 @@
-export default function Itemcard() {
+export default function Itemcard(props) {
   return (
     <div className="card">
       <div className="card-img">
@@ -8,12 +8,9 @@ export default function Itemcard() {
         />
       </div>
       <div className="card-desc">
-        <h2>Lost Iphone 14pro max</h2>
+        <h2>{props.title}</h2>
         <p>
-          Lorem ipsum dolor, sit consectetur adipisicing elit. Recusandae
-          dolore aut totam quasi assumenda magnam. Beatae, optio minus ratione
-          sunt veritatis fugiat dolore velit qui suscipit voluptatum, sed
-          voluptas dolor.
+          {props.description}
         </p>
       </div>
     </div>
