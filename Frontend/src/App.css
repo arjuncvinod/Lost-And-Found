@@ -166,6 +166,7 @@ display: -webkit-box;
 -webkit-box-orient: vertical;
 line-height: 1.5;
 text-decoration: none;
+height: 70px;
 
 }
 a{
@@ -305,6 +306,9 @@ width: 500px;
     height: 100px;
   }
   .form input[type=file]{
+    width: 90vw;
+  }
+  .form .submitbtn{
     width: 90vw;
   }
 }
