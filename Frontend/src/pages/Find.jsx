@@ -19,7 +19,6 @@ function Find() {
 
  const override: CSSProperties = {
    display: "block",
-  //  margin: "auto",
    borderColor: "#fdf004",
    position: "absolute",
    top:"50%",
@@ -56,6 +55,7 @@ function Find() {
                 id={findItem._id}
                 title={findItem.title}
                 description={findItem.description}
+                image={findItem.image}
               />
             );
           })}
