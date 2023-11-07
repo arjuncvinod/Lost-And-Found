@@ -3,12 +3,34 @@ import { PORT, mongoURL } from "./config.js";
 import mongoose from "mongoose";
 import { Item } from "./models/itemmodel.js";
 import cors from "cors";
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);//to require require for multer
+
 
 const app = express();
 app.use(express.json());
 app.use(cors());
+app.use('/files',express.static("files"))
 
-// --------------------------get ---------------------------
+//================================================== multer ==============================================
+
+const multer = require("multer");
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "./files");
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now();
+    cb(null,uniqueSuffix+file.originalname);
+  },
+});
+
+const upload = multer({ storage: storage });
+
+// ====================================================================
+
+// ============================== get =================================
 
 app.get("/item", async (req, res) => {
   try {
@@ -22,37 +44,57 @@ app.get("/item", async (req, res) => {
   }
 });
 
-// ---------------------------------------post----------------------------------
+// ===============================post===================================
 
-app.post("/item", async (req, res) => {
-  try {
-    if (
-      !req.body.name ||
-      !req.body.email ||
-      !req.body.phoneno ||
-      !req.body.title ||
-      !req.body.description
-    ) {
-      return res.status(400).send({ message: "all fields sent" });
-    }
-    const newItem = {
+app.post("/item",upload.single("file"), async (req,res)=>{
+  console.log(req.file);
+  try{
+   const newItem = {
       name: req.body.name,
       email: req.body.email,
       phoneno: req.body.phoneno,
       title: req.body.title,
       description: req.body.description,
-      image: req.body.image,
+      image: req.file.filename,
     };
+   await Item.create(newItem);
+   return res.status(200)
 
-    const item = await Item.create(newItem);
-    return res.status(200).send(item);
-  } catch (error) {
-    console.log(error);
+  }catch(error){
     res.status(500).send("error");
   }
-});
 
-// -------------------------------------get id--------------------------------
+})
+
+// app.post("/item", async (req, res) => {
+//   try {
+//     if (
+//       !req.body.name ||
+//       !req.body.email ||
+//       !req.body.phoneno ||
+//       !req.body.title ||
+//       !req.body.description
+//     ) {
+//       return res.status(400).send({ message: "all fields sent" });
+//     }
+//     const newItem = {
+//       name: req.body.name,
+//       email: req.body.email,
+//       phoneno: req.body.phoneno,
+//       title: req.body.title,
+//       description: req.body.description,
+//       image: req.body.image,
+//     };
+
+//     const item = await Item.create(newItem);
+//     return res.status(200).send(item);
+//   } catch (error) {
+//     console.log(error);
+//     res.status(500).send("error");
+//   }
+// });
+
+// =================================-get id ==================================
 
 app.get("/item/:id", async (req, res) => {
   try {
@@ -64,7 +106,7 @@ app.get("/item/:id", async (req, res) => {
   }
 });
 
-// --------------------------delete -------------------------
+// =================================== delete ============================
 
 app.delete("/item/:id", async (req, res) => {
   try {
