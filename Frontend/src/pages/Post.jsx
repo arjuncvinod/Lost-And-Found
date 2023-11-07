@@ -27,6 +27,7 @@ export default function Post() {
   // }
 
   const submitData= async (e)=>{
+    e.preventDefault();
     const formData = new FormData()
 
     formData.append("name",name)
@@ -38,7 +39,7 @@ export default function Post() {
 
     await axios.post(`${api}/item`,formData,{
       headers:{"Content-Type":"multipart/form-data"},
-    }).then(() =>{
+    }).then(()=>{
       enqueueSnackbar("Item Posted Successfully", { variant: "success" })
       navigate("/find")
        

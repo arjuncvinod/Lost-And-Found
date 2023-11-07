@@ -57,8 +57,8 @@ app.post("/item",upload.single("file"), async (req,res)=>{
       description: req.body.description,
       image: req.file.filename,
     };
-   await Item.create(newItem);
-   return res.status(200)
+   const item=await Item.create(newItem);
+  return res.status(200).send(item);
 
   }catch(error){
     res.status(500).send("error");
