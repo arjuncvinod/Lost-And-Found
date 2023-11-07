@@ -1,15 +1,21 @@
-import React,{useState,CSSProperties} from "react";
+import React,{useState,CSSProperties, useEffect} from "react";
 import Itemcard from "../components/ItemCard";
 import Navbar from "../components/Navbar";
 import axios from "axios"
 import { api } from "../config";
 import HashLoader from "react-spinners/HashLoader";
+import AOS from "aos"
+import "aos/dist/aos.css"
+
 
 
 
 function Find() {
  const [item, setItem] = useState([]);
  const [loading, setLoading]=useState(true)
+ useEffect(()=>{
+  AOS.init({duration:750})
+ },[])
 
  const override: CSSProperties = {
    display: "block",
