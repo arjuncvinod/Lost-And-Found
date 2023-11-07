@@ -15,57 +15,31 @@ export default function Post() {
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
 
-
-  // function handleSubmit(){
-  // const data={
-  //   name:name,
-  //   phoneno:phone,
-  //   email:email,
-  //   title:title,
-  //   description:desc,
-  //   image:image
-  // }
-
-  const submitData= async (e)=>{
+  const submitData = async (e) => {
     e.preventDefault();
-    const formData = new FormData()
+    const formData = new FormData();
 
-    formData.append("name",name)
-    formData.append("phoneno",phone)
-    formData.append("email",email)
-    formData.append("title",title)
-    formData.append("description",desc)
-    formData.append("file",file)
+    formData.append("name", name);
+    formData.append("phoneno", phone);
+    formData.append("email", email);
+    formData.append("title", title);
+    formData.append("description", desc);
+    formData.append("file", file);
 
-    const result=await axios.post(`${api}/item`,formData,{
-      headers:{"Content-Type":"multipart/form-data"},
-    }).then(()=>{
-  console.log(result);
-      enqueueSnackbar("Item Posted Successfully", { variant: "success" })
-      navigate("/find")
-       
-     })
-     .catch((err) => {
-       console.log(err);
-       enqueueSnackbar("Error", { variant: "error" });
-     });
-    }
-
-
-
-
-  //  axios
-  //    .post(`${api}/item`, data)
-  //    .then(() => {
-  //      enqueueSnackbar("Item Posted Successfully", { variant: "success" });
-  //      navigate("/find");
-  //    })
-  //    .catch((err) => {
-  //      console.log(err);
-  //      enqueueSnackbar("Error", { variant: "error" });
-  //    });
-
-
+      await axios
+      .post(`${api}/item`, formData, {
+        headers: { "Content-Type": "multipart/form-data" }
+      })
+      .then(() => {
+        enqueueSnackbar("Item Posted Successfully", { variant: "success" });
+        navigate("/find");
+      })
+      .catch((err) => {
+        console.log(err);
+        enqueueSnackbar("Error", { variant: "error" });
+        
+      });
+  };
   return (
     <main id="postItem">
       <Navbar />
@@ -113,7 +87,6 @@ export default function Post() {
               </textarea>
             </div>
             <div className="input-container">
-              {/* <input type="file" accept="images/*" onChange={(e)=>setImage(e.target.value)} /> */}
               <input
                 type="file"
                 accept="images/*"

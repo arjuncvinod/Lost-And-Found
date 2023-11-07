@@ -7,9 +7,6 @@ import HashLoader from "react-spinners/HashLoader";
 import AOS from "aos"
 import "aos/dist/aos.css"
 
-
-
-
 function Find() {
  const [item, setItem] = useState([]);
  const [loading, setLoading]=useState(true)
