@@ -1,15 +1,30 @@
-import React,{useState} from "react";
+import React,{useState,CSSProperties} from "react";
 import Itemcard from "../components/ItemCard";
 import Navbar from "../components/Navbar";
 import axios from "axios"
 import { api } from "../config";
+import HashLoader from "react-spinners/HashLoader";
+
+
 
 function Find() {
  const [item, setItem] = useState([]);
+ const [loading, setLoading]=useState(true)
+
+ const override: CSSProperties = {
+   display: "block",
+  //  margin: "auto",
+   borderColor: "#fdf004",
+   position: "absolute",
+   top:"50%",
+   left:"50%",
+   transform:"translate(-50%,-50%)"
+ };
    axios
      .get(`${api}/item`)
      .then((res) => {
        setItem(res.data.data);
+       setLoading(false)
      })
      .catch((error) => {
        console.log(error);
@@ -20,6 +35,14 @@ function Find() {
       <section>
         <h1 className="lfh1">Lost and Found Items</h1>
         <div className="item-container">
+          <HashLoader
+            color="#fdf004"
+            loading={loading}
+            cssOverride={override}
+            size={50}
+            aria-label="Loading Spinner"
+            data-testid="loader" 
+          />
           {item.reverse().map((findItem, index) => {
             return (
               <Itemcard
@@ -27,11 +50,10 @@ function Find() {
                 id={findItem._id}
                 title={findItem.title}
                 description={findItem.description}
-    
               />
             );
           })}
-         
+
           <div className="extraItem"></div>
           <div className="extraItem"></div>
           <div className="extraItem"></div>
