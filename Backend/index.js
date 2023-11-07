@@ -48,7 +48,7 @@ app.get("/item", async (req, res) => {
 
 app.post("/item",upload.single("file"), async (req,res)=>{
   console.log(req.file);
-  try{
+  try {
    const newItem = {
       name: req.body.name,
       email: req.body.email,
@@ -61,6 +61,7 @@ app.post("/item",upload.single("file"), async (req,res)=>{
   return res.status(200).send(item);
 
   }catch(error){
+    console.log(error);
     res.status(500).send("error");
   }
 

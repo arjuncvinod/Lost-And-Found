@@ -37,9 +37,10 @@ export default function Post() {
     formData.append("description",desc)
     formData.append("file",file)
 
-    await axios.post(`${api}/item`,formData,{
+    const result=await axios.post(`${api}/item`,formData,{
       headers:{"Content-Type":"multipart/form-data"},
     }).then(()=>{
+  console.log(result);
       enqueueSnackbar("Item Posted Successfully", { variant: "success" })
       navigate("/find")
        
