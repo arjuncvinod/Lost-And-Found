@@ -11,30 +11,58 @@ export default function Post() {
   const [email, setEmail] = useState("");
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
-  const [image, setImage] = useState("");
+  const [file, setFile] = useState("");
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
 
-  function handleSubmit(){
-  const data={
-    name:name,
-    phoneno:phone,
-    email:email,
-    title:title,
-    description:desc,
-    image:image
-  }
-   axios
-     .post(`${api}/item`, data)
-     .then(() => {
-       enqueueSnackbar("Item Posted Successfully", { variant: "success" });
-       navigate("/find");
+
+  // function handleSubmit(){
+  // const data={
+  //   name:name,
+  //   phoneno:phone,
+  //   email:email,
+  //   title:title,
+  //   description:desc,
+  //   image:image
+  // }
+
+  const submitData= async (e)=>{
+    const formData = new FormData()
+
+    formData.append("name",name)
+    formData.append("phoneno",phone)
+    formData.append("email",email)
+    formData.append("title",title)
+    formData.append("description",desc)
+    formData.append("file",file)
+
+    await axios.post(`${api}/item`,formData,{
+      headers:{"Content-Type":"multipart/form-data"},
+    }).then(() =>{
+      enqueueSnackbar("Item Posted Successfully", { variant: "success" })
+      navigate("/find")
+       
      })
      .catch((err) => {
        console.log(err);
        enqueueSnackbar("Error", { variant: "error" });
      });
-  }
+    }
+
+
+
+
+  //  axios
+  //    .post(`${api}/item`, data)
+  //    .then(() => {
+  //      enqueueSnackbar("Item Posted Successfully", { variant: "success" });
+  //      navigate("/find");
+  //    })
+  //    .catch((err) => {
+  //      console.log(err);
+  //      enqueueSnackbar("Error", { variant: "error" });
+  //    });
+
 
   return (
     <main id="postItem">
@@ -43,7 +71,7 @@ export default function Post() {
         <h1 className="lfh1">Post Found Item</h1>
         <div className="form-container">
           <h2>Please fill all the required fields</h2>
-          <div className="form">
+          <form className="form" encType="multipart/form-data">
             <div className="input-container">
               <label htmlFor="">Name </label>{" "}
               <input
@@ -83,12 +111,20 @@ export default function Post() {
               </textarea>
             </div>
             <div className="input-container">
-              <input type="file" onChange={(e)=>setImage(e.target.value)} />
+              {/* <input type="file" accept="images/*" onChange={(e)=>setImage(e.target.value)} /> */}
+              <input
+                type="file"
+                accept="images/*"
+                onChange={(e) => setFile(e.target.files[0])}
+                name="file"
+              />
             </div>
             <div className="input-container">
-              <button className="submitbtn" onClick={handleSubmit}>Post</button>
+              <button type="submit" className="submitbtn" onClick={submitData}>
+                Post
+              </button>
             </div>
-          </div>
+          </form>
         </div>
       </section>
     </main>
