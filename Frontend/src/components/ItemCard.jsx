@@ -1,4 +1,5 @@
 import { api } from "../config";
+import noImage from "../assets/no-image.png"
 
 export default function Itemcard(props) {
   return (
@@ -8,6 +9,9 @@ export default function Itemcard(props) {
           <img
             src={api+"/files/"+props.image}
             alt=""
+            onError={(e) => {
+              e.target.src = noImage;
+            }}
           />
         </div>
         <div className="card-desc">
