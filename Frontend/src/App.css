@@ -86,7 +86,7 @@ nav ul li a{
 #findpage section{
     margin-top: 70px;
     padding: 0 5%;
-    width: 100vw;
+    /* width: 100vw; */
     display: flex;
     flex-direction: column;
 }
