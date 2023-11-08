@@ -280,6 +280,84 @@ width: 500px;
 .submitbtn:hover{
     background-color: #e4d913;
 }
+
+/* ------------------------------------details page------------------------ */
+#detailspage section{
+    margin-top: 70px;
+    /* min-height: 90vh; */
+    display: flex;
+    justify-content: center;
+
+}
+.details-card{
+    margin-top: 5px;
+    color: white;
+    border: 2px solid white;
+    width: 450px;
+    padding: 20px;
+    border-radius: 10px;
+}
+.details-card .img-container{
+   
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.details-card .img-container img{
+     width: 400px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.details-card h1{
+    text-align: center;
+    margin: 12px 0;
+}
+.details-card .action-container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    /* background-color: red; */
+    /* align-items: center; */
+    margin: 12px 0;
+}
+.details-card .action-container a{
+    padding: 8px 20px;
+    /* width: 100px;
+    height: 35px; */
+    background-color: yellow;
+    margin: 0 10px;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 5px ;
+    border-radius: 8px;
+}
+.details-container{
+    display: flex;
+    /* flex-direction: column; */
+justify-content: flex-start;
+gap: 10px;
+margin: 12px 0;
+    
+
+}
+.details-container p{
+    text-align: start;
+    color: rgba(255, 255, 255, 0.95);
+}
+.details-container p:nth-child(2){
+    color: var(--yellow);}
+.desc p{
+    text-align: justify;
+    
+}
+
+
+
+
+
 @media only screen and (max-width: 750px) {
     nav img{
         height: 40px;
@@ -387,6 +465,15 @@ nav{
   }
   .form .submitbtn{
     width: 90vw;
+  }
+  .details-card{
+    width: 100vw;
+    border: none;
+    max-width: 450px;
+    padding: 40px;
+  }
+  .details-card .img-container img{
+    border-radius: 20px;
   }
 }
 
