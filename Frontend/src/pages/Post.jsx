@@ -12,11 +12,14 @@ export default function Post() {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [file, setFile] = useState("");
+  const [btn,setBtn]=useState(true)
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
 
   const submitData = async (e) => {
+
     e.preventDefault();
+    setBtn(false)
     const formData = new FormData();
 
     formData.append("name", name);
@@ -37,6 +40,7 @@ export default function Post() {
       .catch((err) => {
         console.log(err);
         enqueueSnackbar("Error", { variant: "error" });
+        setBtn(true);
         
       });
   };
@@ -95,9 +99,12 @@ export default function Post() {
               />
             </div>
             <div className="input-container">
-              <button type="submit" className="submitbtn" onClick={submitData}>
+            {btn?
+              (<button type="submit" className="submitbtn" onClick={submitData}>
                 Post
-              </button>
+              </button>) : (<button className="submitbtn">
+                Posting...
+              </button>)}
             </div>
           </form>
         </div>
