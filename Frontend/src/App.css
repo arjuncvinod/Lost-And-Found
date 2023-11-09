@@ -1,11 +1,14 @@
 :root{
     --yellow:#fdf004;
 }
+html{
+    scroll-behavior: smooth;
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
 }
 
 body{
@@ -87,7 +90,40 @@ nav ul li a{
     z-index: 2;
 
 }
+#about .lfh1{
+    font-size: 3rem;
+}
+#about .lfh1::after{
+    top:65px ;
+    height: 3px;
+}
 
+.about-desc{
+    color: white;
+    padding: 0 12%;
+    padding-bottom:5% ;
+    font-size:2rem;
+    /* text-align: justify; */
+    text-align: center;
+    line-height: 40px;
+    font-family: 'Caveat',Arial, Helvetica, sans-serif;
+}
+.about-desc span{
+    color:var(--yellow);
+    font-family: 'Caveat',Arial, Helvetica, sans-serif;
+}
+
+footer{
+    background-color: var(--yellow);
+    text-align: center;
+    padding: 10px
+}
+footer a{
+    color: red;
+}
+footer a:hover{
+    text-decoration: underline;
+}
 /* -----------------------------------------------find page ------------------------------------------- */
 #findpage section{
     margin-top: 70px;
@@ -100,7 +136,7 @@ nav ul li a{
     margin: 0px 0 50px 0;
     text-align: center;
    color: white;
-   font-size: 2.2rem;
+   /* font-size: 2.2rem; */
    position: relative;
    display: block
 }
