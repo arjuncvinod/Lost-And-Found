@@ -22,6 +22,7 @@ function Find() {
    left:"50%",
    transform:"translate(-50%,-50%)"
  };
+ useEffect(()=>{
    axios
      .get(`${api}/item`)
      .then((res) => {
@@ -31,6 +32,7 @@ function Find() {
      .catch((error) => {
        console.log(error);
      });
+     },[])
   return (
     <main id="findpage">
       <Navbar />
