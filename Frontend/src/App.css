@@ -197,9 +197,10 @@ footer a:hover{
 }
 .card-desc h2{
 color: white;
-margin-bottom: 20px;
+margin-bottom:0px;
 font-size: 20px;
 text-decoration: none;
+height: 50px;
 }
 .card-desc p{
 color:gray;
@@ -326,7 +327,7 @@ width: 500px;
 
 }
 .details-card{
-    margin-top: 5px;
+    margin-top: 10px;
     color: white;
     border: 2px solid white;
     width: 450px;
