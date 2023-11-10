@@ -5,7 +5,9 @@ function Home(){
     return (
       <main>
         <Navbar />
+        <div className="particle-container">
         <ParticlesBackground />
+        </div>
         <div className="hero">
           <h1>Lost and Found</h1>
           <a href="/find">
