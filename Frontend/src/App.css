@@ -421,7 +421,7 @@ margin: 12px 0;
 nav ul{
     display: flex;
     flex-direction: column;
-    background: #fdf004;
+    background:var(--yellow);
     position: absolute;
     right: 0;
     top: 0;
@@ -431,7 +431,7 @@ nav ul{
     border-bottom-left-radius: 60px;
     align-items: center;
     padding-top: 30px;
-    transition: .5s;
+    transition: .5s ease;
 }
 nav ul{
     display: flex;
@@ -446,14 +446,21 @@ nav ul{
 .inactive{
     width: 0;
 }
+.active li a{
+    color: black;
+}
+.inactive li a{
+    color: transparent;
+}
 nav ul li{
     width: 100px;
 }
 nav ul li a{
-    color: rgb(0, 0, 0);
+    color: transparent;
     font-weight: bold;
     text-align: start;
     width: 100%;
+    transition: 1s;
 }
 nav{
     display: flex;
