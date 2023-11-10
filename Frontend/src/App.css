@@ -394,75 +394,6 @@ margin: 12px 0;
 
 
 
-@media only screen and (max-height: 400px) {
-html::-webkit-scrollbar{
-display: none;
-}
-nav{
-    /* background-color: transparent;
-    backdrop-filter:none; */
-    height: 30px;
-}
-nav img{
-    height: 20px;
-    width: 20px;
-}
-nav .menu{
-    
-}
-.menu-container{
-    height: 20px;
-    width: 20px;
-}
-.menu{
-    scale: 1;
-}
-.hero h1{
-    margin-top: 40px ;
-    font-size: 1.5rem;
-}
-.hero button{
-    scale: .5;
-    margin-top: 10px;
-}
-#about .lfh1,.lfh1{
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-}
-#about .lfh1::after{
-    top:24px;
-    height: 1px;
-    width: 50px;
-}
-.about-desc{
-    font-size: 1rem;
-    line-height: 20px;
-}
-
-footer{
-    padding: 0;
-    font-size: .5rem;
-}
-nav ul li{
-width: 100%;
-margin: 8px 0;
-display: flex;
-}
-nav ul {
-      border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
-nav ul li a{
-    font-size: 8px;
-    text-align: center;
-    width: 100px;
-    height: 5px;
-} 
-.active{
-    width: 20%;
-}
-
-}
 
 
 
@@ -594,4 +525,73 @@ nav{
   .details-card .img-container img{
     border-radius: 20px;
   }
+}
+@media only screen and (max-height: 400px) {
+html::-webkit-scrollbar{
+display: none;
+}
+nav{
+    /* background-color: transparent;
+    backdrop-filter:none; */
+    height: 30px;
+}
+nav img{
+    height: 20px;
+    width: 20px;
+}
+nav .menu{
+    
+}
+.menu-container{
+    height: 20px;
+    width: 20px;
+}
+.menu{
+    scale: 1;
+}
+.hero h1{
+    margin-top: 40px ;
+    font-size: 1.5rem;
+}
+.hero button{
+    scale: .5;
+    margin-top: 10px;
+}
+#about .lfh1,.lfh1{
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+#about .lfh1::after{
+    top:24px;
+    height: 1px;
+    width: 50px;
+}
+.about-desc{
+    font-size: 1rem;
+    line-height: 20px;
+}
+
+footer{
+    padding: 0;
+    font-size: .5rem;
+}
+nav ul li{
+width: 100%;
+margin: 8px 0;
+display: flex;
+}
+nav ul {
+      border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+nav ul li a{
+    font-size: 8px;
+    text-align: center;
+    width: 100px;
+    height: 5px;
+} 
+.active{
+    width: 20%;
+}
+
 }
