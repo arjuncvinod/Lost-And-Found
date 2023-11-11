@@ -593,5 +593,11 @@ nav ul li a{
 .active{
     width: 20%;
 }
-
+.item-container a{
+    scale: .5;
+}
+.item-container{
+    width: 100vw;
+    gap: 1px;
+}
 }
