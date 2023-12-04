@@ -24,6 +24,12 @@ npm install
 cd frontend
 npm install
 ```
+### Start the server
+```console
+cd server
+npm start
+```
+
 
 ### screenshots
 1![image](https://github.com/arjuncvinod/Lost-And-Found/assets/68469520/7b68e817-1a62-4dfb-835f-6008379f752d)
