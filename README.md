@@ -26,11 +26,14 @@ npm install
 ```
 ### Start the server
 ```console
-cd server
+cd backend
 npm start
 ```
-
-
+### Start the client
+```console
+cd frontend
+npm start
+```
 ### screenshots
 1![image](https://github.com/arjuncvinod/Lost-And-Found/assets/68469520/7b68e817-1a62-4dfb-835f-6008379f752d)
 3![image](https://github.com/arjuncvinod/Lost-And-Found/assets/68469520/1b137131-d0bc-4fc8-a737-6c2c797e45dc)
