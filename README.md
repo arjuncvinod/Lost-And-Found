@@ -5,6 +5,15 @@
 #### Database : ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=flat&logo=mongodb&logoColor=white) <br />
 ### [live demo](https://lostandfound-acv.vercel.app)
 ### API - https://lostandfound-api.onrender.com
+
+## Installation
+
+### Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/arjuncvinod/Lost-And-Found.git
+cd lost-and-found
+```
 ### screenshots
 1![image](https://github.com/arjuncvinod/Lost-And-Found/assets/68469520/7b68e817-1a62-4dfb-835f-6008379f752d)
 3![image](https://github.com/arjuncvinod/Lost-And-Found/assets/68469520/1b137131-d0bc-4fc8-a737-6c2c797e45dc)
