@@ -34,6 +34,8 @@ npm start
 cd frontend
 npm start
 ```
+### The server will run on http://localhost:8000, and the client will be available at http://localhost:3000
+
 ### screenshots
 1![image](https://github.com/arjuncvinod/Lost-And-Found/assets/68469520/7b68e817-1a62-4dfb-835f-6008379f752d)
 3![image](https://github.com/arjuncvinod/Lost-And-Found/assets/68469520/1b137131-d0bc-4fc8-a737-6c2c797e45dc)
